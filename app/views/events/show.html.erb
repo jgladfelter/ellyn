@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @event.activity_id %>
+</p>
+
+<p>
+  <strong>Age min:</strong>
+  <%= @event.age_min %>
+</p>
+
+<p>
+  <strong>Age max:</strong>
+  <%= @event.age_max %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @event.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @event.end_date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @event.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @event.end_time %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @event.price %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
