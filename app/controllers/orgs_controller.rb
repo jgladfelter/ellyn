@@ -5,6 +5,8 @@ class OrgsController < ApplicationController
   # GET /orgs.json
   def index
     @orgs = Org.all
+    @q = Org.ransack(params[:q])
+    @orgs = @q.result
   end
 
   # GET /orgs/1
@@ -69,6 +71,6 @@ class OrgsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def org_params
-      params.require(:org).permit(:street, :city, :state, :zip, :name, :rating, :phone_number, :contact_name, :email)
+      params.require(:org).permit(:desc, :street, :city, :state, :zip, :name, :rating, :phone_number, :contact_name, :email)
     end
 end

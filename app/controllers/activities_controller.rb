@@ -5,6 +5,8 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     @activities = Activity.all
+    @q = Activity.ransack(params[:q])
+    @activities = @q.result(:distinct => true).includes(:desc)
   end
 
   # GET /activities/1
@@ -69,6 +71,6 @@ class ActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:org_id, :name)
+      params.require(:activity).permit(:org_id, :name, :desc)
     end
 end
