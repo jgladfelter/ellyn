@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+
     @q = Activity.ransack(params[:q])
     @activities = @q.result(:distinct => true).includes(:desc)
   end

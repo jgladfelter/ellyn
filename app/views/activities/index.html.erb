@@ -1,18 +1,19 @@
 <h1>Search Activities</h1>
+
+<%= search_form_for @activity do |f| %>
+
   <div class="form-group">
-    <%= f.label :director_name_cont %>
-    <%= f.text_field :director_name_cont, :class => "form-control" %>
+    <%= f.label :name_cont %>
+    <%= f.text_field :name_cont, :class => "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :actors_name_or_actors_bio_cont %>
-    <%= f.text_field :actors_name_or_actors_bio_cont, :class => "form-control" %>
+    <%= f.label :name_or_desc_cont %>
+    <%= f.text_field :name_or_desc_cont, :class => "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :actors_id_eq, "Actor" %>
-    <%= f.select :actors_id_eq, options_from_collection_for_select(Actor.all, :id, :name, @q.actors_id_eq), { :include_blank => true }, :class => "form-control" %>
-  </div>
+<% end %>
+
 <table>
   <thead>
     <tr>

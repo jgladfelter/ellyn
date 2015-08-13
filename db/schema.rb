@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811201818) do
+ActiveRecord::Schema.define(version: 20150813184000) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150811201818) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "desc"
   end
 
   create_table "admin_users", force: true do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150811201818) do
     t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "desc"
   end
 
   create_table "orgs", force: true do |t|
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 20150811201818) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "desc"
   end
 
 end
