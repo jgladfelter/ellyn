@@ -1,0 +1,6 @@
+<%= form_tag calendar_url(@user.id), :method => "patch" do |f| %>
+  <div class="form-group">
+      <%= f.label :activity.name, class: 'sr-only' %>
+      <%= f.text_field :activity.desc, placeholder: "#{@event.desc}", class: 'form-control' %>
+    </div>
+<% end %>
