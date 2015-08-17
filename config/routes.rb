@@ -7,6 +7,9 @@ Ellyn::Application.routes.draw do
 
   resources :orgs
 
+
+  root :to => "org#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
