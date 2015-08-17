@@ -3,10 +3,11 @@ ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
-gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'devise'
 gem 'ransack'
 gem 'bootstrap_form'
+gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'faker'
 
 # Use sqlite3 as the database for Active Record
 group :development do
