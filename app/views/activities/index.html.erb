@@ -1,6 +1,6 @@
 <h1>Search Activities</h1>
 
-<%= search_form_for @activity do |f| %>
+<%= search_form_for @q do |f| %>
 
   <div class="form-group">
     <%= f.label :name_cont %>
@@ -10,6 +10,10 @@
   <div class="form-group">
     <%= f.label :name_or_desc_cont %>
     <%= f.text_field :name_or_desc_cont, :class => "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
   </div>
 
 <% end %>

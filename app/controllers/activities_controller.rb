@@ -6,7 +6,7 @@ class ActivitiesController < ApplicationController
   def index
 
     @q = Activity.ransack(params[:q])
-    @activities = @q.result(:distinct => true).includes(:desc)
+    @activities = @q.result(:distinct => true)
   end
 
   # GET /activities/1
