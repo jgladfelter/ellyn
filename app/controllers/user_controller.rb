@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :check_if_user_or_admin, only: [:edit, :update, :destroy]
+   before_action :authenticate_user!
+   before_action :check_if_user_or_admin, only: [:edit, :update, :destroy]
 
 
   def check_if_user_or_admin
