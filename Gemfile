@@ -8,6 +8,7 @@ gem 'ransack'
 gem 'bootstrap_form'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'faker'
+gem 'geocoder'
 
 # Use sqlite3 as the database for Active Record
 group :development do
