@@ -2,7 +2,6 @@ class Activity < ActiveRecord::Base
 	belongs_to :org
 	has_many :events
 	geocoded_by :full_address
-	# should add a method to check for an address change
 	after_validation :geocode
 
 	def full_address
