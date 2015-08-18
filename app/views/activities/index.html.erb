@@ -32,7 +32,7 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= activity.org.street %></td>
+        <td class="coords" data-lat="<%= activity.latitude %>" data-lon="<%=activity.longitude %>"><%= activity.org.street %></td>
         <td><%= activity.name %></td>
         <td><%= link_to 'Show', activity %></td>
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
@@ -43,5 +43,5 @@
 </table>
 
 <br>
-<%= render "show_map" %>
+<div id="map"></div>
 <%= link_to 'New Activity', new_activity_path %>
