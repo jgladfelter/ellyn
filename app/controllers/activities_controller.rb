@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
 
     @q = Activity.ransack(params[:q])
     @activities = @q.result(:distinct => true)
+    @zip = Activity.ransack(params[:zip])
   end
 
   # GET /activities/1

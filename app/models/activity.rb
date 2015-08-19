@@ -1,6 +1,7 @@
 class Activity < ActiveRecord::Base
 	belongs_to :org
 	has_many :events
+
 	geocoded_by :full_address
 	after_validation :geocode
 

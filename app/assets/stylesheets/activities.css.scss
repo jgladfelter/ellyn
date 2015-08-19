@@ -4,7 +4,49 @@
 
 
 #map {
-	width: 500px;
-	height: 500px;
-	margin: 0px;
+	// width: 500px;
+	// height: 500px;
+  height: 400px;
+  width: 400px;
+  padding: 10px;
 }
+
+#header {
+    background-color:blue;
+    color:white;
+    text-align:center;
+    padding:5px;
+
+}
+#section {
+    background-color:white;
+    width:450px;
+    float:left;
+    padding:10px;
+    margin-top: 80px;
+    text-align:left;
+    border: 10px solid gray;
+
+}
+
+#article {
+    background-color:white;
+    width:450px;
+    float:left;
+    padding:10px;
+    margin-top: 15px;
+    text-align:center;
+    border: 10px solid gray;
+
+}
+#results {
+    background-color:white;
+    // width:450px;
+    float:left;
+    // padding:10px;
+    text-color:gray;
+    // margin-top: 80px;
+    text-align:left;
+    border: 10px solid gray;
+}
+

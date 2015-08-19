@@ -1,57 +1,59 @@
 
-<div class="container">
+<div class="container" >
 <%= search_form_for @q do |f| %>
 
-  <div class="form-group">
+  <div class="form-group" id="section">
     <h1>Search Activities</h1>
 
-    <%= f.label :name_or_desc_cont %>
-    <%= f.text_field :name_or_desc_cont, :class => "form-control" %>
-  </div>
+    <%= f.text_field :name_or_desc_cont, :placeholder => "enter activity or zipcode" , :class => "form-control" %>
 
-  <div class="actions">
-    <%= f.submit %>
   </div>
 
 <% end %>
-</div>
-<div class="container">
-<div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= %></h3>
+  <div class="row" id="results">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= %></h3>
+        </div>
+
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-5 col-sm-offset-1 col-sm-3 col-md-offset-2">
+                <dl class="dl-horizontal">
+                  <dt></dt>
+                  <dd><%=  %></dd>
+
+                  <dt></dt>
+                  <dd><%=  %></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Organization</th>
+                <th>Event</th>
+                <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+              <% @activities.each do |activity| %>
+              <tr>
+                <td class="coords" data-lat="<%= activity.latitude %>" data-lon="<%=activity.longitude %>"><%= link_to activity.org_id, event_path(:org_id).name%> <%= @activity %></a></td>
+                <td><%= activity.name %></td><td><%= activity.desc %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12">
-            <dl class="dl-horizontal">
-              <dt></dt>
-              <dd><%=  %></dd>
 
-              <dt></dt>
-              <dd><%=  %></dd>
-<table>
-  <thead>
-    <tr>
-      <th>Organization</th>
-      <th>Event</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @activities.each do |activity| %>
-      <tr>
-        <td class="coords" data-lat="<%= activity.latitude %>" data-lon="<%=activity.longitude %>"><%= activity.org.name %></td>
-        <td><%= activity.name %></td><td><%= activity.desc %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<div id="map"></div>
+    <div class="col-md-6">
+      <div id="map"></div>
+    </div>
+  </div>
 </div>
+
