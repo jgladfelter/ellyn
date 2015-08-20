@@ -1,49 +1,31 @@
 <p id="notice"><%= notice %></p>
-<h1>Showing One Organization</h1>
-<p>
-  <strong>Street:</strong>
-  <%= @org.street %>
-</p>
+    <div class="container">
+      <div class="row" id="section">
+        <div class="col-med-6">
+            <h1><%= @org.name %></h1>
+          <ul>
+            <li>
+              <strong> <%= @org.street %> </strong>
+            </li>
+            <li>
+              <strong> <%= @org.city %> <%= @org.state %> <%= @org.zip %> </strong>
+            </li>
+            <li>
+              <strong>  Rating:  </strong> <%= @org.rating %>
+            </li>
+            <li>
+            <strong>  Phone number:  </strong><%= link_to @org.phone_number %>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+            <div id="map">
 
-<p>
-  <strong>City:</strong>
-  <%= @org.city %>
-</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div>
 
-<p>
-  <strong>State:</strong>
-  <%= @org.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @org.zip %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @org.name %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @org.rating %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @org.phone_number %>
-</p>
-
-<p>
-  <strong>Contact name:</strong>
-  <%= @org.contact_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @org.email %>
-</p>
-
-<%= link_to 'Edit', edit_org_path(@org) %> |
-<%= link_to 'Back', orgs_path %>
+      <%= link_to 'Back', orgs_path %>
+    </div>
