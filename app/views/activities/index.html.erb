@@ -5,7 +5,7 @@
   <div class="form-group" id="section">
     <h1>Search Activities</h1>
 
-    <%= f.text_field :name_or_desc_cont, :placeholder => "enter activity or zipcode" , :class => "form-control" %>
+    <%= f.search_field :name_or_desc_or_org_name_or_org_zip_cont, :placeholder => "enter activity or zipcode" , :class => "form-control" %>
 
   </div>
 
@@ -41,8 +41,8 @@
             <tbody>
               <% @activities.each do |activity| %>
               <tr>
-                <td class="coords" data-lat="<%= activity.latitude %>" data-lon="<%=activity.longitude %>"><%= link_to activity.org_id, event_path(:org_id).name%> <%= @activity %></a></td>
-                <td><%= activity.name %></td><td><%= activity.desc %></td>
+                <td class="coords" data-lat="<%= activity.latitude %>" data-lon="<%=activity.longitude %>"><%= link_to activity.org.name, "/orgs/#{activity.org_id}" %> <%= @activity %></a></td>
+                <td><%= link_to activity.name %></td><td><%= activity.desc %></td>
               </tr>
               <% end %>
             </tbody>

@@ -7,7 +7,7 @@ class OrgsController < ApplicationController
   def index
     @orgs = Org.all
     @q = Org.ransack(params[:q])
-    @orgs = @q.result
+    @orgs = @q.result.includes(:activities, :events)
   end
 
   # GET /orgs/1
@@ -67,7 +67,7 @@ class OrgsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_org
-      @org = Org.find(params[:id])
+      @org = Org.find (params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
