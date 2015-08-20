@@ -1,6 +1,6 @@
 $(function () {
 	var $coords = $('.coords'),
-		$map = $('.map'),
+		$map = $('#map'),
     locations = [];
 
 	$.each($coords, function () {
@@ -19,13 +19,21 @@ $(function () {
     console.log(locations);
     $.each(locations, function () {
       marker = new google.maps.Marker({
-      map: map,
-      draggable: true,
-      animation: google.maps.Animation.DROP,
-      position: {lat: this.latitude, lng: this.longitude}
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: {lat: this.latitude, lng: this.longitude}
+      });
     });
-    });
+    
   	
 	}
 	initMap();
+  var mapSize = ($('#results').height()-50)
+  if (mapSize > 300) {
+    $map.height(mapSize);  
+  } else {
+    $map.height(300);
+  }
+  
 });
