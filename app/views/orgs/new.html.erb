@@ -1,5 +1,14 @@
-<h1>New org</h1>
+<div class="container" id="new-org" >
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+        <h1>New Organization? Register Today!</h1>
+        <%= render 'form' %>
+        <br>
+        <%= link_to 'Back', orgs_path %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', orgs_path %>
