@@ -19,11 +19,15 @@
       <div class="panel panel-default table-top">
           <table>
             <thead>
-              <tr>
-                <th>Organization</th>
-                <th>Event</th>
-                <th>Description</th>
-               </tr>
+              <% if @activities.empty? %>
+                <h3>No activities found.</h3>
+              <% else %>
+                <tr>
+                  <th>Organization</th>
+                  <th>Event</th>
+                  <th>Description</th>
+                </tr>
+              <% end %>
             </thead>
             <tbody>
               <% @activities.each do |activity| %>
@@ -32,6 +36,7 @@
                 <td><%= link_to activity.name %></td><td><%= activity.desc %></td>
               </tr>
               <% end %>
+
             </tbody>
           </table>
         </div>
